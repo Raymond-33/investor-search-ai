@@ -20,8 +20,24 @@ async function searchInvestors() {
     });
 
     const data = await response.json();
-    resultsDiv.textContent = data.result;
+
+    // Clear previous results
+    resultsDiv.innerHTML = "";
+
+    // Split AI output into separate investors (handles clumpy text)
+    const investors = data.result
+      .split(/\d+\.\s+/)
+      .filter(item => item.trim() !== "");
+
+    investors.forEach((investor, index) => {
+      const div = document.createElement("div");
+      div.className = "investor-card";
+      div.textContent = `${index + 1}. ${investor.trim()}`;
+      resultsDiv.appendChild(div);
+    });
+
   } catch (error) {
     resultsDiv.textContent = "Error fetching investor data.";
+    console.error(error);
   }
 }
