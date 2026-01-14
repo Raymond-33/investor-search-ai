@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(
+      rgba(15, 32, 39, 0.85),
+      rgba(32, 58, 67, 0.85),
+      rgba(44, 83, 100, 0.85)
+    ),
+    url("https://i.pinimg.com/1200x/d0/d7/d1/d0d7d1499242bdeef28d1b953be68b08.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Main container */
+.container {
+  width: 420px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2c5364;
+  box-shadow: 0 0 0 2px rgba(44, 83, 100, 0.2);
+}
+
+/* Button */
+button {
+  width: 100%;
+  height: 46px;
+  background: #2c5364;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: #203a43;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Results section */
+#results {
+  margin-top: 20px;
+}
+
+/* Investor cards */
+.investor-card {
+  background: #f4f7f8;
+  border-left: 4px solid #2c5364;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  animation: slideUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
