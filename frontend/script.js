@@ -21,10 +21,15 @@ async function searchInvestors() {
 
     const data = await response.json();
 
-    // Clear previous results
+    console.log("Frontend received:", data);
+
+    if (!response.ok) {
+      resultsDiv.textContent = data.error || "Server error occurred.";
+      return;
+    }
+
     resultsDiv.innerHTML = "";
 
-    // Split AI output into separate investors (handles clumpy text)
     const investors = data.result
       .split(/\d+\.\s+/)
       .filter(item => item.trim() !== "");
@@ -37,7 +42,7 @@ async function searchInvestors() {
     });
 
   } catch (error) {
-    resultsDiv.textContent = "Error fetching investor data.";
-    console.error(error);
+    console.error("Network Error:", error);
+    resultsDiv.textContent = "Network error. Check if backend is running.";
   }
 }
