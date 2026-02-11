@@ -20,7 +20,7 @@ Backend
 
 * Node.js
 * Express.js
-* OpenAI API
+* Openrouter API
 * dotenv
 * cors
 
@@ -61,7 +61,7 @@ In bash
 npm install
 
 Create a `.env` file inside the `backend` folder and add your OpenAI API key:
-"OPENAI_API_KEY="your_openai_api_key_here"
+"OPENROUTER_API_KEY=your_openrouter_api_key_here"
 PORT=5000"
 
 Start the backend server:
@@ -87,8 +87,8 @@ How the Application Works
 
 AI API Details
 
-* API Used: OpenAI Chat Completion API
-* Model: `gpt-4o-mini`
+* API Used: OpenRouter API (OpenAI-compatible endpoint)
+* Model: `openai/gpt-3.5-turbo`
 
 Prompt Format Used
 
